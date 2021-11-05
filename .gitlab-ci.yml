@@ -1,0 +1,34 @@
+image: gradle:7.2.0-jdk17-alpine
+
+stages:
+  - build
+  - test
+
+gradle-build:
+  stage: build
+  before_script:
+    - export GRADLE_USER_HOME=`pwd`/.gradle
+  script:
+    - gradle clean uberJar
+  artifacts:
+    paths:
+      - build/libs/04-gvt-1.0.jar
+  cache:
+    key: gradle-cache
+    paths:
+      - .gradle/caches
+
+acceptance:
+  stage: test
+  image: eclipse-temurin:17_35-jdk-focal
+  script:
+    - src/test/acceptance/acc01.sh
+    - src/test/acceptance/acc02.sh
+    - src/test/acceptance/acc03.sh
+    - src/test/acceptance/acc04.sh
+    - src/test/acceptance/acc05.sh
+    - src/test/acceptance/acc06.sh
+    - src/test/acceptance/acc07.sh
+    - src/test/acceptance/acc08.sh
+    - src/test/acceptance/acc09.sh
+    - src/test/acceptance/acc10.sh
