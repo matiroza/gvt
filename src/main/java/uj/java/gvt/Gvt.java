@@ -251,7 +251,7 @@ public class Gvt {
                             fileToAdd.toPath(),
                             Paths.get(".gvt/lib" + versionNew + "/" + file)
                     );
-                    System.out.print("File " + file + " added successfully.");
+                    System.out.print("File " + file + " added successfully.\n");
                 }
             } catch (IOException e) {
                 System.out.print("File " + file + " cannot be added, see ERR for derails.");
