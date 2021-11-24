@@ -40,7 +40,7 @@ public class Gvt {
         else if (args.length == 2)
             detach(args[1], "");
         else {
-            System.out.print("Please specify file to detach.");
+            System.out.print("Please specify file to detach.\n");
             System.exit(30);
         }
     }
