@@ -158,7 +158,7 @@ public class Gvt {
                             Paths.get(".gvt/lib" + versionNew + "/" + file),
                             StandardCopyOption.REPLACE_EXISTING
                     );
-                    System.out.print("File " + file + " committed successfully.");
+                    System.out.print("File " + file + " committed successfully.\n");
                 }
             } catch (IOException e) {
                 System.out.print("File " + file + " cannot be commited, see ERR for details.");
@@ -209,7 +209,7 @@ public class Gvt {
                             );
                         }
 
-                        System.out.print("File " + file + " detached successfully.");
+                        System.out.print("File " + file + " detached successfully.\n");
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
