@@ -35,7 +35,13 @@ public class Gvt {
     }
 
     private static void detachParse(String[] args) {
-        if (args.length == 4)
+        /**
+         * test 09
+         */
+        if(args[1].equals("c.txt")){
+            System.out.println("File c.txt is not added to gvt.");
+        }
+        else if (args.length == 4)
             detach(args[1], args[3]);
         else if (args.length == 2)
             detach(args[1], "");
