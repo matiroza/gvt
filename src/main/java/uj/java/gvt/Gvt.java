@@ -180,7 +180,8 @@ public class Gvt {
             if (fileToAdd.exists()) {
                 try {
                     if (!isAdded(file)) {
-                        System.out.print("File " + file + " is not added to gvt.\n");
+                        System.out.print("File "+file+" is not added to gvt.\n");
+                        System.exit(30);
                     } else {
                         var path = Paths.get(".gvt/version.txt");
                         List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
