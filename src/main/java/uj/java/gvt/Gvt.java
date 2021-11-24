@@ -180,8 +180,7 @@ public class Gvt {
             if (fileToAdd.exists()) {
                 try {
                     if (!isAdded(file)) {
-                        System.out.print("File "+file+" is not added to gvt.\n");
-                        System.exit(30);
+                        System.out.print("File " + file + " is not added to gvt.\n");
                     } else {
                         var path = Paths.get(".gvt/version.txt");
                         List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
@@ -213,10 +212,13 @@ public class Gvt {
                         System.out.print("File " + file + " detached successfully.\n");
                     }
                 } catch (IOException e) {
+                    System.out.print("File " + file + " cannot be detached, see ERR for details.\n");
                     e.printStackTrace();
+                    System.exit(31);
+
                 }
             } else {
-                System.out.print("File " + file + " is not added to gvt.");
+                System.out.print("Current directory is not initialized. Please use \"init\" command to initialize.");
             }
         } else {
             System.out.print("File " + file + " cannot be detached, see ERR for details.");
